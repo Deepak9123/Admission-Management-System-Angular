@@ -2,12 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>AMSF</title>
+  <title>KIDS ZONE ENGLISH MEDIUM SCHOOL</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+  <link rel="icon" type=".jpg" href="/appLogo.jpg">
 </head>
 <body>
   <app-root></app-root>
+    <script>
+      function previewImage(event, previewId) {
+          const reader = new FileReader();
+          reader.onload = function() {
+              const output = document.getElementById(previewId);
+              output.src = reader.result;
+              output.style.display = 'block'; 
+          }
+          reader.readAsDataURL(event.target.files[0]);
+      }
+  </script>
 </body>
 </html>

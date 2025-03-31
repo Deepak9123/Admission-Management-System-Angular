@@ -1,151 +1,209 @@
+// <style>
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('../../../public/appBack.jpg'); /* Add background image */
-    background-size: cover;
-    background-position: center;
-    color: #aeaeaf;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
 }
-
-h1, h2 {
-    text-align: center;
-    color: #090a0a;
-}
-
 header {
-    background-color: rgba(29, 122, 133, 0.9); /* Semi-transparent background */
+    background-color: rgba(29, 122, 133, 0.9);
     color: white;
     padding: 20px 0;
     text-align: center;
-}
-
-.header-content {
+  }
+  
+  .header-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 1100px;
+    flex-wrap: wrap;
+    max-width: 1200px;
     margin: 0 auto;
-}
-
-.logo {
-    width: 180px; /* Set logo size */
-    margin-right: 40px;
-}
-.logo1 {
-    width: 180px; /* Set logo size */
-    margin-right: 0px;
-}
-
-.school-info h1 {
+  }
+  
+  .logo {
+    width: 150px; /* Increase logo size */
+    height: auto;
+    margin-right: 30px; /* Adjust spacing to the right */
+    margin-left: -20px; /* Move logo slightly to the left */
+  }
+  
+  .school-info h1 {
     font-size: 24px;
+    font-weight: bold;
     margin: 0;
-}
-
-.school-info p {
+  }
+  
+  .school-info p {
+    margin: 5px 0;
     font-size: 14px;
-    margin: 0;
-}
+    line-height: 1.4;
+  }
+  
+  .school-info {
+    text-align: left;
+    margin-left: 20px;
+  }
+  
+ 
+  
 
 /* Form Section */
 .form-section {
-    max-width: 900px;
-    margin: 40px auto;
-    background-color: #f7f7f7; /* Light background color */
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-.form-section h2 {
-    color: #1d7a85;
-    margin-bottom: 20px;
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.form-group {
-    margin-bottom: 20px;
+.form-column {
+  width: 48%;
+  min-width: 280px;
 }
 
-.form-group label {
-    font-size: 16px;
-    margin-bottom: 5px;
-    display: block;
-    color: #333;
+h2, h3 {
+  color: #1d7a85;
 }
 
-.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="date"], .form-group input[type="file"] {
-    width: 100%;
-    padding: 12px;
-    font-size: 14px;
-    border: 1px solid #aeaeaf;
-    border-radius: 4px;
-    background-color: #fff;
-    color: #333;
+label {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #555;
 }
 
-.form-group input[type="file"] {
-    padding: 5px;
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+}
+
+/* Button Section */
+.button-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 13px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s;
+}
+
+.clear-btn {
+  background-color: #f44336;
 }
 
 .submit-btn {
-    background-color: #1d7a85;
-    color: white;
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
+  background-color: #4caf50;
 }
 
-.submit-btn:hover {
-    background-color: #179685;
+button:hover {
+  opacity: 0.9;
 }
 
-/* Image Preview Styles */
+/* Image Preview */
 .image-preview {
-    display: none;
-    margin-top: 10px;
-    max-width: 100%;
-    max-height: 200px;
-    border: 1px solid #aeaeaf;
-    border-radius: 4px;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #1d7a85;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-footer p {
-    font-size: 14px;
+  display: none;
+  margin-top: 10px;
+  max-width: 100%;
+  max-height: 150px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
+    /* Ensure the form container and its children fit within the viewport */
+    .form-container {
+      flex-direction: column;
+      width: 100%;
+      padding: 0 10px; /* Add padding to avoid touching the edges */
+      box-sizing: border-box; /* Prevent overflow caused by padding */
+      overflow-x: hidden; /* Hide horizontal scrollbar */
+    }
+  
     .header-content {
-        flex-direction: column;
-        text-align: center;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
     }
-
+  
+    .school-info {
+      text-align: center;
+      margin-left: 0;
+    }
+  
     .logo {
-        width: 60px; /* Smaller logo on mobile */
+      margin-right: 0;
+      margin-bottom: 15px;
+      width: 120px; /* Slightly smaller logo */
+      margin-left: 0;
     }
+  
+    .form-column {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  
+    /* Ensure all input fields inside form-columns are responsive */
+    .form-column input {
+      width: 100%; /* Ensures inputs fill available width */
+      box-sizing: border-box; /* Prevents overflow */
+      padding: 8px;
+      font-size: 14px;
+      margin-bottom: 10px; /* Adds some space between inputs */
+    }
+  
+    /* Make the buttons fit properly */
+    .button-section {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 10px;
+    }
+  
+    .button-section button {
+      width: 48%; /* Make buttons take up nearly half the width each */
+      padding: 12px 20px;
+      font-size: 16px;
+      margin: 10px 0;
+      box-sizing: border-box;
+    }
+  }
+  
 
-    .form-section {
-        padding: 20px;
-    }
-
-    .form-group input[type="text"], .form-group input[type="email"], .form-group input[type="date"], .form-group input[type="file"] {
-        padding: 10px;
-    }
-
-    .submit-btn {
-        font-size: 14px;
-        padding: 10px;
-    }
+/* Footer Section */
+footer {
+  background-color: #1d7a85;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+  font-size: 11px;
 }
+// </style>

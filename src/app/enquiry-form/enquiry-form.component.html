@@ -1,185 +1,131 @@
-
-
 <body>
-    <!-- Header Section -->
     <header>
-      <div class="header-content">
-          <img src="appLogo.jpg" alt="Kids Zone Logo" class="logo"> 
+        <div class="header-content">
+          <img src="appLogo.jpg" alt="Kids Zone Logo" class="logo" />
           <div class="school-info">
-              <h1>KIDS ZONE ENGLISH MEDIUM SCHOOL, BARSHITAKLI</h1>
-              <p>Behind Petrol Pump, Pimpalkhuta Road, Gajanan Nagar, Barshitakli, Dist. Akola.</p>
-              <p>Contact: M. 7499767019/7807516664</p>
-          </div>
-          <!-- <img src="appLogo.jpg" alt="Kids Zone Logo" class="logo1">  -->
-      </div>
-  </header>
-  
-  
-    <!-- Admission Form Section -->
-    <section class="form-section">
-        <h2>Admission Form</h2>
-        <form action="#" method="POST" class="admission-form">
-            <!-- Student Information -->
-            <div class="form-group">
-                <label for="studentName">1. Student Full Name *</label>
-                <input type="text" id="studentName" name="studentName" required>
-            </div>
-            <div class="form-group">
-                <label for="adharCardNo">2. Adhar Card No *</label>
-                <input type="text" id="adharCardNo" name="adharCardNo" required>
-            </div>
-            <div class="form-group">
-                <label for="std">3. No Of Std *</label>
-                <input type="text" id="std" name="std" required>
-            </div>
-            <div class="form-group">
-                <label for="dob">4. Date of Birth *</label>
-                <input type="date" id="dob" name="dob" required>
-            </div>
-            <div class="form-group">
-                <label for="email">5. Email Id *</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-  
-            <!-- Father's Information -->
-            <div class="form-group">
-                <label for="fatherName">6. Father's Full Name *</label>
-                <input type="text" id="fatherName" name="fatherName" required>
-            </div>
-            <div class="form-group">
-                <label for="fatherAdharCardNo">7. Father's Adhar Card No *</label>
-                <input type="text" id="fatherAdharCardNo" name="fatherAdharCardNo" required>
-            </div>
-            <div class="form-group">
-                <label for="fatherMobileNo">8. Father's Mobile No *</label>
-                <input type="text" id="fatherMobileNo" name="fatherMobileNo" required>
-            </div>
-            <div class="form-group">
-                <label for="fatherEmail">9. Father's Email Id *</label>
-                <input type="email" id="fatherEmail" name="fatherEmail" required>
-            </div>
-  
-            <!-- Mother's Information -->
-            <div class="form-group">
-                <label for="motherName">10. Mother's Full Name *</label>
-                <input type="text" id="motherName" name="motherName" required>
-            </div>
-            <div class="form-group">
-                <label for="motherAdharCardNo">11. Mother's Adhar Card No *</label>
-                <input type="text" id="motherAdharCardNo" name="motherAdharCardNo" required>
-            </div>
-            <div class="form-group">
-                <label for="motherMobileNo">12. Mother's Mobile No *</label>
-                <input type="text" id="motherMobileNo" name="motherMobileNo" required>
-            </div>
-            <div class="form-group">
-                <label for="motherEmail">13. Mother's Email Id *</label>
-                <input type="email" id="motherEmail" name="motherEmail" required>
-            </div>
-  
-            <!-- Address Information -->
-            <div class="form-group">
-                <label for="placeOfBirth">14. Place of Birth *</label>
-                <input type="text" id="placeOfBirth" name="placeOfBirth" required>
-            </div>
-            <div class="form-group">
-                <label for="pincode">15. Pincode *</label>
-                <input type="text" id="pincode" name="pincode" required>
-            </div>
-            <div class="form-group">
-                <label for="city">16. City *</label>
-                <input type="text" id="city" name="city" required>
-            </div>
-            <div class="form-group">
-                <label for="district">17. District *</label>
-                <input type="text" id="district" name="district" required>
-            </div>
-            <div class="form-group">
-                <label for="state">18. State *</label>
-                <input type="text" id="state" name="state" required>
-            </div>
-  
-            <!-- Additional Information -->
-            <div class="form-group">
-                <label for="religion">19. Religion *</label>
-                <input type="text" id="religion" name="religion" required>
-            </div>
-            <div class="form-group">
-                <label for="caste">20. Caste *</label>
-                <input type="text" id="caste" name="caste" required>
-            </div>
-            <div class="form-group">
-                <label for="motherTongue">21. Mother Tongue *</label>
-                <input type="text" id="motherTongue" name="motherTongue" required>
-            </div>
-  
-            <div class="form-group">
-                <label for="pwd">22. PWD (If any)</label>
-                <input type="text" id="pwd" name="pwd">
-            </div>
-  
-            <div class="form-group">
-                <label for="appId">23. App ID</label>
-                <input type="text" id="appId" name="appId">
-            </div>
-            <div class="form-group">
-                <label for="udise">24. UDISE Of Previous School</label>
-                <input type="text" id="udise" name="udise">
-            </div>
-            <div class="form-group">
-                <label for="classOfStudent">25. Class Of Student</label>
-                <input type="text" id="classOfStudent" name="classOfStudent">
-            </div>
-  
-            <!-- File Upload -->
-            <div class="form-group">
-                <label for="paymentReceipt">26. Upload Payment Receipt</label>
-                <input type="file" id="paymentReceipt" name="paymentReceipt" accept="image/*" onchange="previewImage(event, 'paymentPreview')">
-                <img id="paymentPreview" class="image-preview" src="" alt="Payment Receipt Preview">
-                 <!-- @if (paymentReceiptUrl) {
-                <img [src]="paymentReceiptUrl" id="paymentPreview" class="image-preview" alt="Payment Receipt Preview">
-                 } -->
-              </div>
-            <div class="form-group">
-                <label for="familyPhoto">27. Upload Family Photo</label>
-                <input type="file" id="familyPhoto" name="familyPhoto" accept="image/*" onchange="previewImage(event, 'familyPreview')">
-                <img id="familyPreview" class="image-preview" src="" alt="Family Photo Preview">
-            </div>
-            <div class="form-group">
-                <label for="passportPhoto">28. Upload Student Passport Size Photo</label>
-                <input type="file" id="passportPhoto" name="passportPhoto" accept="image/*" onchange="previewImage(event, 'passportPreview')">
-                <img id="passportPreview" class="image-preview" src="" alt="Passport Photo Preview">
-            </div>
-  
-            <div class="form-group">
-                <button type="submit" class="submit-btn">Submit</button>
-            </div>
-        </form>
-    </section>
-  
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-content">
-            <p>KIDS ZONE ENGLISH MEDIUM SCHOOL, BARSHITAKLI</p>
+            <h1>KIDS ZONE ENGLISH MEDIUM SCHOOL, BARSHITAKLI</h1>
             <p>Behind Petrol Pump, Pimpalkhuta Road, Gajanan Nagar, Barshitakli, Dist. Akola.</p>
-            <p>Contact: M. 7499767019/7807516664</p>
-            <p>Developed and Maintained by: ABC Technology</p>
-            <p>Email: xyzgmail.com</p>
+            <p>Contact: M. 7499767019 / 7807516664</p>
+          </div>
         </div>
+      </header>
+      
+
+    <section class="form-section">
+        <h2>Admission Enquiry Form</h2>
+        <div class="form-container">
+            <div class="form-column">
+                <label for="studentName">Student Full Name *</label>
+                <input type="text" id="studentName" name="studentName" required />
+
+                <label for="adharCardNo">Adhar Card No *</label>
+                <input type="text" id="adharCardNo" name="adharCardNo" required />
+
+                <label for="std">No Of Std *</label>
+                <input type="text" id="std" name="std" required />
+
+                <label for="dob">Date of Birth *</label>
+                <input type="date" id="dob" name="dob" required />
+
+                <label for="email">Email Id *</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="pwd">PWD (If any)</label>
+                <input type="text" id="pwd" name="pwd" />
+
+                <label for="appId">App ID</label>
+                <input type="text" id="appId" name="appId" />
+
+                <label for="udise">UDISE Of Previous School</label>
+                <input type="text" id="udise" name="udise" />
+
+                <label for="classOfStudent">Class Of Student</label>
+                <input type="text" id="classOfStudent" name="classOfStudent" />
+
+                <label for="fatherName">Father's Full Name *</label>
+                <input type="text" id="fatherName" name="fatherName" required />
+
+                <label for="fatherAdharCardNo">Father's Adhar Card No *</label>
+                <input type="text" id="fatherAdharCardNo" name="fatherAdharCardNo" required />
+
+                <label for="fatherMobileNo">Father's Mobile No *</label>
+                <input type="text" id="fatherMobileNo" name="fatherMobileNo" required />
+
+
+            </div>
+
+            <div class="form-column">
+
+                <label for="fatherEmail">Father's Email Id *</label>
+                <input type="email" id="fatherEmail" name="fatherEmail" required />
+
+                <label for="motherName">Mother's Full Name *</label>
+                <input type="text" id="motherName" name="motherName" required />
+
+                <label for="motherAdharCardNo">Mother's Adhar Card No *</label>
+                <input type="text" id="motherAdharCardNo" name="motherAdharCardNo" required />
+
+                <label for="motherMobileNo">Mother's Mobile No *</label>
+                <input type="text" id="motherMobileNo" name="motherMobileNo" required />
+
+                <label for="motherEmail">Mother's Email Id *</label>
+                <input type="email" id="motherEmail" name="motherEmail" required />
+
+                <label for="placeOfBirth">Place of Birth *</label>
+                <input type="text" id="placeOfBirth" name="placeOfBirth" required />
+
+                <label for="pincode">Pincode *</label>
+                <input type="text" id="pincode" name="pincode" required />
+
+                <label for="city">City *</label>
+                <input type="text" id="city" name="city" required />
+
+                <label for="district">District *</label>
+                <input type="text" id="district" name="district" required />
+
+                <label for="state">State *</label>
+                <input type="text" id="state" name="state" required />
+
+                <label for="religion">Religion *</label>
+                <input type="text" id="religion" name="religion" required />
+
+                <!-- <label for="caste">Caste *</label>
+          <input type="text" id="caste" name="caste" required /> -->
+
+                <label for="motherTongue">Mother Tongue *</label>
+                <input type="text" id="motherTongue" name="motherTongue" required />
+
+
+            </div>
+        </div>
+
+        <!-- File Uploads -->
+        <div class="form-group">
+            <label for="paymentReceipt">Upload Payment Receipt</label>
+            <input type="file" id="paymentReceipt" name="paymentReceipt" accept="image/*" onchange="previewImage(event, 'paymentPreview')" />
+            <img id="paymentPreview" class="image-preview" src="" alt="Payment Receipt Preview">
+        </div>
+        <div class="form-group">
+            <label for="familyPhoto">Upload Family Photo</label>
+            <input type="file" id="familyPhoto" name="familyPhoto" accept="image/*" />
+        </div>
+        <div class="form-group">
+            <label for="passportPhoto">Upload Student Passport Size Photo</label>
+            <input type="file" id="passportPhoto" name="passportPhoto" accept="image/*" />
+        </div>
+
+        <!-- Form Buttons -->
+        <div class="button-section">
+            <button type="reset" class="clear-btn">Clear</button>
+            <button type="submit" class="submit-btn">Submit</button>
+        </div>
+    </section>
+
+    <footer>
+        <!-- <p>KIDS ZONE ENGLISH MEDIUM SCHOOL, BARSHITAKLI</p>
+      <p>Behind Petrol Pump, Pimpalkhuta Road, Gajanan Nagar, Barshitakli, Dist. Akola.</p>
+      <p>Contact: M. 7499767019 / 7807516664</p> -->
+        <p>Developed and Maintained by: ABC Technology</p>
+        <p>Email: xyzgmail.com</p>
     </footer>
-  
-    <!-- <script>
-        function previewImage(event, previewId) {
-            const reader = new FileReader();
-            reader.onload = function() {
-                const output = document.getElementById(previewId);
-                output.src = reader.result;
-                output.style.display = 'block'; // Show image preview
-            }
-            reader.readAsDataURL(event.target.files[0]);
-        }
-    </script> -->
-  </body>
-  
- 
-  
+</body>

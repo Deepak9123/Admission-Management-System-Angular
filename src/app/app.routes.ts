@@ -6,4 +6,12 @@ export const routes: Routes = [
     path: 'enquiryForm',
     component: EnquiryFormComponent,
   },
+  {
+    path: '',
+    component: EnquiryFormComponent,
+  },
+  {
+    path: '**',
+    component: EnquiryFormComponent,
+  },
 ];

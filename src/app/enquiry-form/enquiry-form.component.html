@@ -13,112 +13,111 @@
 
     <section class="form-section">
         <h2>Admission Enquiry Form</h2>
-        <div class="form-container">
-            <div class="form-column">
-                <label for="studentName">Student Full Name </label>
-                <input type="text" id="studentName" name="studentName" required />
-
-                <label for="adharCardNo">Adhar Card No </label>
-                <input type="text" id="adharCardNo" name="adharCardNo" required />
-
-                <label for="std">No Of Std </label>
-                <input type="text" id="std" name="std" required />
-
-                <label for="dob">Date of Birth </label>
-                <input type="date" id="dob" name="dob" required />
-
-                <label for="email">Email Id </label>
-                <input type="email" id="email" name="email" required />
-
-                <label for="pwd">PWD (If any)</label>
-                <input type="text" id="pwd" name="pwd" />
-
-                <label for="appId">App ID</label>
-                <input type="text" id="appId" name="appId" />
-
-                <label for="udise">UDISE Of Previous School</label>
-                <input type="text" id="udise" name="udise" />
-
-                <label for="classOfStudent">Class Of Student</label>
-                <input type="text" id="classOfStudent" name="classOfStudent" />
-
-                <label for="fatherName">Father's Full Name </label>
-                <input type="text" id="fatherName" name="fatherName" required />
-
-                <label for="fatherAdharCardNo">Father's Adhar Card No </label>
-                <input type="text" id="fatherAdharCardNo" name="fatherAdharCardNo" required />
-
-                <label for="fatherMobileNo">Father's Mobile No </label>
-                <input type="text" id="fatherMobileNo" name="fatherMobileNo" required />
-
-
+        <form [formGroup]="enquiryForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+            <div class="form-container">
+              <!-- Column 1 -->
+              <div class="form-column">
+                <label>Student Full Name</label>
+                <input type="text" formControlName="studentName" />
+          
+                <label>Adhar Card No</label>
+                <input type="text" formControlName="adharCardNo" />
+          
+                <label>No Of Std</label>
+                <input type="text" formControlName="std" />
+          
+                <label>Date of Birth</label>
+                <input type="date" formControlName="dob" />
+          
+                <label>Email Id</label>
+                <input type="email" formControlName="email" />
+          
+                <label>PWD (If any)</label>
+                <input type="text" formControlName="pwd" />
+          
+                <label>App ID</label>
+                <input type="text" formControlName="appId" />
+          
+                <label>UDISE Of Previous School</label>
+                <input type="text" formControlName="udise" />
+          
+                <label>Class Of Student</label>
+                <input type="text" formControlName="classOfStudent" />
+          
+                <label>Father's Full Name</label>
+                <input type="text" formControlName="fatherName" />
+          
+                <label>Father's Adhar Card No</label>
+                <input type="text" formControlName="fatherAdharCardNo" />
+          
+                <label>Father's Mobile No</label>
+                <input type="text" formControlName="fatherMobileNo" />
+              </div>
+          
+              <!-- Column 2 -->
+              <div class="form-column">
+                <label>Father's Email Id</label>
+                <input type="email" formControlName="fatherEmail" />
+          
+                <label>Mother's Full Name</label>
+                <input type="text" formControlName="motherName" />
+          
+                <label>Mother's Adhar Card No</label>
+                <input type="text" formControlName="motherAdharCardNo" />
+          
+                <label>Mother's Mobile No</label>
+                <input type="text" formControlName="motherMobileNo" />
+          
+                <label>Mother's Email Id</label>
+                <input type="email" formControlName="motherEmail" />
+          
+                <label>Place of Birth</label>
+                <input type="text" formControlName="placeOfBirth" />
+          
+                <label>Pincode</label>
+                <input type="text" formControlName="pincode" />
+          
+                <label>City</label>
+                <input type="text" formControlName="city" />
+          
+                <label>District</label>
+                <input type="text" formControlName="district" />
+          
+                <label>State</label>
+                <input type="text" formControlName="state" />
+          
+                <label>Religion</label>
+                <input type="text" formControlName="religion" />
+          
+                <label>Mother Tongue</label>
+                <input type="text" formControlName="motherTongue" />
+              </div>
             </div>
-
-            <div class="form-column">
-
-                <label for="fatherEmail">Father's Email Id </label>
-                <input type="email" id="fatherEmail" name="fatherEmail" required />
-
-                <label for="motherName">Mother's Full Name </label>
-                <input type="text" id="motherName" name="motherName" required />
-
-                <label for="motherAdharCardNo">Mother's Adhar Card No </label>
-                <input type="text" id="motherAdharCardNo" name="motherAdharCardNo" required />
-
-                <label for="motherMobileNo">Mother's Mobile No </label>
-                <input type="text" id="motherMobileNo" name="motherMobileNo" required />
-
-                <label for="motherEmail">Mother's Email Id </label>
-                <input type="email" id="motherEmail" name="motherEmail" required />
-
-                <label for="placeOfBirth">Place of Birth </label>
-                <input type="text" id="placeOfBirth" name="placeOfBirth" required />
-
-                <label for="pincode">Pincode </label>
-                <input type="text" id="pincode" name="pincode" required />
-
-                <label for="city">City </label>
-                <input type="text" id="city" name="city" required />
-
-                <label for="district">District </label>
-                <input type="text" id="district" name="district" required />
-
-                <label for="state">State </label>
-                <input type="text" id="state" name="state" required />
-
-                <label for="religion">Religion </label>
-                <input type="text" id="religion" name="religion" required />
-
-                <!-- <label for="caste">Caste </label>
-          <input type="text" id="caste" name="caste" required /> -->
-
-                <label for="motherTongue">Mother Tongue </label>
-                <input type="text" id="motherTongue" name="motherTongue" required />
-
-
+          
+            <!-- File Uploads -->
+            <div class="form-group">
+              <label for="familyPhoto">Upload Family Photo</label>
+              <input type="file" id="familyPhoto" name="familyPhoto" (change)="onFamilyPhotoChange($event)"  onchange="previewImage(event, 'paymentPreview')"  />
+              <img id="familyPhoto" class="image-preview" src="" alt="Family Photo Preview">
             </div>
-        </div>
-
-        <!-- File Uploads -->
-        <!-- <div class="form-group">
+          <!-- <div class="form-group">
             <label for="paymentReceipt">Upload Payment Receipt</label>
-            <input type="file" id="paymentReceipt" name="paymentReceipt" accept="image/" onchange="previewImage(event, 'paymentPreview')" />
+            <input type="file" id="paymentReceipt" name="paymentReceipt" accept="image/" onchange="previewImage(event, 'paymentPreview')" (change)="onPassportPhotoChange($event)"  />
             <img id="paymentPreview" class="image-preview" src="" alt="Payment Receipt Preview">
         </div> -->
-        <div class="form-group">
-            <label for="familyPhoto">Upload Family Photo</label>
-            <input type="file" id="familyPhoto" name="familyPhoto" accept="image/" />
-        </div>
-        <div class="form-group">
-            <label for="passportPhoto">Upload Student Passport Size Photo</label>
-            <input type="file" id="passportPhoto" name="passportPhoto" accept="image/" />
-        </div>
-
-        <!-- Form Buttons -->
-        <div class="button-section">
-            <button type="reset" class="clear-btn">Clear</button>
-            <button type="submit" class="submit-btn">Submit</button>
-        </div>
+            <div class="form-group">
+              <label for="passportPhoto">Upload Student Passport Size Photo</label>
+              <input type="file" id="passportPhoto" name="passportPhoto" accept="image/" onchange="previewImage(event, 'paymentPreview')" (change)="onPassportPhotoChange($event)" />
+              <img id="passportPhoto" class="image-preview" src="" alt=" Photo Preview">
+            </div>
+          
+            <!-- Buttons -->
+            <div class="button-section">
+              <button type="reset" class="clear-btn">Clear</button>
+              <button type="submit" class="submit-btn">Submit</button>
+            </div>
+          </form>
+          
     </section>
 
     <footer>

@@ -1,130 +1,163 @@
 <body>
-    <header>
-        <div class="header-content">
-          <img src="appLogo.jpg" alt="Kids Zone Logo" class="logo" />
-          <div class="school-info">
-            <h1>KIDS ZONE ENGLISH MEDIUM SCHOOL, BARSHITAKLI</h1>
-            <p>Behind Petrol Pump, Pimpalkhuta Road, Gajanan Nagar, Barshitakli, Dist. Akola.</p>
-            <p>Contact: M. 7499767019 / 7807516664</p>
-          </div>
+  <header>
+    <div class="header-content">
+      <img src="appLogo.jpg" alt="Kids Zone Logo" class="logo" />
+      <div class="school-info">
+        <h1>KIDS ZONE ENGLISH MEDIUM SCHOOL, BARSHITAKLI</h1>
+        <p>Behind Petrol Pump, Pimpalkhuta Road, Gajanan Nagar, Barshitakli, Dist. Akola.</p>
+        <p>Contact: M. 7499767019 / 7807516664</p>
+      </div>
+    </div>
+  </header>
+  
+
+  <section class="form-section">
+    <h2>Admission Enquiry Form</h2>
+    <form [formGroup]="enquiryForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+      <div class="form-container">
+        <!-- Column 1 -->
+        <div class="form-column">
+          <label>Student Full Name</label>
+          <input type="text" formControlName="studentName" />
+          <div class="error" *ngIf="submitted && f['studentName'].hasError('required')">This field is required.</div>
+  
+          <label>Adhar Card No</label>
+          <input type="text" formControlName="adharCardNo" />
+          <div class="error" *ngIf="submitted && f['adharCardNo'].hasError('required')">This field is required.</div>
+  
+          <label>No Of Std</label>
+          <input type="text" formControlName="std" />
+          <div class="error" *ngIf="submitted && f['std'].hasError('required')">This field is required.</div>
+  
+          <label>Date of Birth</label>
+          <input type="date" formControlName="dob" />
+          <div class="error" *ngIf="submitted && f['dob'].hasError('required')">This field is required.</div>
+  
+          <label>Email Id</label>
+          <input type="email" formControlName="email" />
+          <div class="error" *ngIf="submitted && f['email'].hasError('required')">This field is required.</div>
+          <div class="error" *ngIf="submitted && f['email'].hasError('email')">Invalid email format.</div>
+  
+          <label>Father's Full Name</label>
+          <input type="text" formControlName="fatherName" />
+          <div class="error" *ngIf="submitted && f['fatherName'].hasError('required')">This field is required.</div>
+  
+          <label>Father's Adhar Card No</label>
+          <input type="text" formControlName="fatherAdharCardNo" />
+          <div class="error" *ngIf="submitted && f['fatherAdharCardNo'].hasError('required')">This field is required.</div>
+  
+          <label>Father's Mobile No</label>
+          <input type="text" formControlName="fatherMobileNo" />
+          <div class="error" *ngIf="submitted && f['fatherMobileNo'].hasError('required')">This field is required.</div>
+  
+          <label>Father's Email Id</label>
+          <input type="email" formControlName="fatherEmail" />
+          <div class="error" *ngIf="submitted && f['fatherEmail'].hasError('required')">This field is required.</div>
+          <div class="error" *ngIf="submitted && f['fatherEmail'].hasError('email')">Invalid email format.</div>
+  
+          <label>Mother's Full Name</label>
+          <input type="text" formControlName="motherName" />
+          <div class="error" *ngIf="submitted && f['motherName'].hasError('required')">This field is required.</div>
+  
+          <label>Mother's Adhar Card No</label>
+          <input type="text" formControlName="motherAdharCardNo" />
+          <div class="error" *ngIf="submitted && f['motherAdharCardNo'].hasError('required')">This field is required.</div>
+  
+          <label>Mother's Mobile No</label>
+          <input type="text" formControlName="motherMobileNo" />
+          <div class="error" *ngIf="submitted && f['motherMobileNo'].hasError('required')">This field is required.</div>
         </div>
-      </header>
-      
+  
+        <!-- Column 2 -->
+        <div class="form-column">
+          <label>PWD (If any)</label>
+          <input type="text" formControlName="pwd" />
+  
+          <label>App ID</label>
+          <input type="text" formControlName="appId" />
+  
+          <label>UDISE Of Previous School</label>
+          <input type="text" formControlName="udise" />
+  
+          <label>Class Of Student</label>
+          <input type="text" formControlName="classOfStudent" />
+          <div class="error" *ngIf="submitted && f['classOfStudent'].hasError('required')">This field is required.</div>
+  
+          <label>Place of Birth</label>
+          <input type="text" formControlName="placeOfBirth" />
+          <div class="error" *ngIf="submitted && f['placeOfBirth'].hasError('required')">This field is required.</div>
+  
+          <label>Pincode</label>
+          <input type="text" formControlName="pincode" />
+          <div class="error" *ngIf="submitted && f['pincode'].hasError('required')">This field is required.</div>
+  
+          <label>City</label>
+          <input type="text" formControlName="city" />
+          <div class="error" *ngIf="submitted && f['city'].hasError('required')">This field is required.</div>
+  
+          <label>District</label>
+          <input type="text" formControlName="district" />
+          <div class="error" *ngIf="submitted && f['district'].hasError('required')">This field is required.</div>
+  
+          <label>State</label>
+          <input type="text" formControlName="state" />
+          <div class="error" *ngIf="submitted && f['state'].hasError('required')">This field is required.</div>
+  
+          <label>Religion</label>
+          <input type="text" formControlName="religion" />
+          <div class="error" *ngIf="submitted && f['religion'].hasError('required')">This field is required.</div>
+  
+          <label>Mother Tongue</label>
+          <input type="text" formControlName="motherTongue" />
+          <div class="error" *ngIf="submitted && f['motherTongue'].hasError('required')">This field is required.</div>
+  
+          <label>Mother's Email Id</label>
+          <input type="email" formControlName="motherEmail" />
+          <div class="error" *ngIf="submitted && f['motherEmail'].hasError('required')">This field is required.</div>
+          <div class="error" *ngIf="submitted && f['motherEmail'].hasError('email')">Invalid email format.</div>
+        </div>
+      </div>
+  
+      <!-- File Uploads -->
+      <div class="form-group">
+        <label for="familyPhoto">Upload Family Photo</label>
+        <input
+          type="file"
+          id="familyPhoto"
+          name="familyPhoto"
+          (change)="onFamilyPhotoChange($event)"
+          onchange="previewImage(event, 'paymentPreview')"
+        />
+        <img id="familyPhoto" class="image-preview" src="" alt="Family Photo Preview" />
+      </div>
+  
+      <div class="form-group">
+        <label for="passportPhoto">Upload Student Passport Size Photo</label>
+        <input
+          type="file"
+          id="passportPhoto"
+          name="passportPhoto"
+          accept="image/"
+          onchange="previewImage(event, 'paymentPreview')"
+          (change)="onPassportPhotoChange($event)"
+        />
+        <img id="passportPhoto" class="image-preview" src="" alt=" Photo Preview" />
+      </div>
+  
+      <!-- Buttons -->
+      <div class="button-section">
+        <button type="reset" class="clear-btn">Clear</button>
+        <button type="submit" class="submit-btn">Submit</button>
+      </div>
+    </form>
+  </section>
+  
 
-    <section class="form-section">
-        <h2>Admission Enquiry Form</h2>
-        <form [formGroup]="enquiryForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
-            <div class="form-container">
-              <!-- Column 1 -->
-              <div class="form-column">
-                <label>Student Full Name</label>
-                <input type="text" formControlName="studentName" />
-          
-                <label>Adhar Card No</label>
-                <input type="text" formControlName="adharCardNo" />
-          
-                <label>No Of Std</label>
-                <input type="text" formControlName="std" />
-          
-                <label>Date of Birth</label>
-                <input type="date" formControlName="dob" />
-          
-                <label>Email Id</label>
-                <input type="email" formControlName="email" />
-          
-                <label>PWD (If any)</label>
-                <input type="text" formControlName="pwd" />
-          
-                <label>App ID</label>
-                <input type="text" formControlName="appId" />
-          
-                <label>UDISE Of Previous School</label>
-                <input type="text" formControlName="udise" />
-          
-                <label>Class Of Student</label>
-                <input type="text" formControlName="classOfStudent" />
-          
-                <label>Father's Full Name</label>
-                <input type="text" formControlName="fatherName" />
-          
-                <label>Father's Adhar Card No</label>
-                <input type="text" formControlName="fatherAdharCardNo" />
-          
-                <label>Father's Mobile No</label>
-                <input type="text" formControlName="fatherMobileNo" />
-              </div>
-          
-              <!-- Column 2 -->
-              <div class="form-column">
-                <label>Father's Email Id</label>
-                <input type="email" formControlName="fatherEmail" />
-          
-                <label>Mother's Full Name</label>
-                <input type="text" formControlName="motherName" />
-          
-                <label>Mother's Adhar Card No</label>
-                <input type="text" formControlName="motherAdharCardNo" />
-          
-                <label>Mother's Mobile No</label>
-                <input type="text" formControlName="motherMobileNo" />
-          
-                <label>Mother's Email Id</label>
-                <input type="email" formControlName="motherEmail" />
-          
-                <label>Place of Birth</label>
-                <input type="text" formControlName="placeOfBirth" />
-          
-                <label>Pincode</label>
-                <input type="text" formControlName="pincode" />
-          
-                <label>City</label>
-                <input type="text" formControlName="city" />
-          
-                <label>District</label>
-                <input type="text" formControlName="district" />
-          
-                <label>State</label>
-                <input type="text" formControlName="state" />
-          
-                <label>Religion</label>
-                <input type="text" formControlName="religion" />
-          
-                <label>Mother Tongue</label>
-                <input type="text" formControlName="motherTongue" />
-              </div>
-            </div>
-          
-            <!-- File Uploads -->
-            <div class="form-group">
-              <label for="familyPhoto">Upload Family Photo</label>
-              <input type="file" id="familyPhoto" name="familyPhoto" (change)="onFamilyPhotoChange($event)"  onchange="previewImage(event, 'paymentPreview')"  />
-              <img id="familyPhoto" class="image-preview" src="" alt="Family Photo Preview">
-            </div>
-          <!-- <div class="form-group">
-            <label for="paymentReceipt">Upload Payment Receipt</label>
-            <input type="file" id="paymentReceipt" name="paymentReceipt" accept="image/" onchange="previewImage(event, 'paymentPreview')" (change)="onPassportPhotoChange($event)"  />
-            <img id="paymentPreview" class="image-preview" src="" alt="Payment Receipt Preview">
-        </div> -->
-            <div class="form-group">
-              <label for="passportPhoto">Upload Student Passport Size Photo</label>
-              <input type="file" id="passportPhoto" name="passportPhoto" accept="image/" onchange="previewImage(event, 'paymentPreview')" (change)="onPassportPhotoChange($event)" />
-              <img id="passportPhoto" class="image-preview" src="" alt=" Photo Preview">
-            </div>
-          
-            <!-- Buttons -->
-            <div class="button-section">
-              <button type="reset" class="clear-btn">Clear</button>
-              <button type="submit" class="submit-btn">Submit</button>
-            </div>
-          </form>
-          
-    </section>
-
-    <footer>
-        <!-- <p>KIDS ZONE ENGLISH MEDIUM SCHOOL, BARSHITAKLI</p>
+  <footer>
+    <!-- <p>KIDS ZONE ENGLISH MEDIUM SCHOOL, BARSHITAKLI</p>
       <p>Behind Petrol Pump, Pimpalkhuta Road, Gajanan Nagar, Barshitakli, Dist. Akola.</p>
       <p>Contact: M. 7499767019 / 7807516664</p> -->
-        <p>Developed and Maintained by: Sevysis </p>
-        <p>Email: contact&#65312;sevysis.com</p>
-    </footer>
+    <p>Developed and Maintained by: Sevysis</p>
+    <p>Email: contact&#65312;sevysis.com</p>
+  </footer>
 </body>

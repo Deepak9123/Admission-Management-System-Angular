@@ -3,15 +3,17 @@ import { EnquiryFormComponent } from './enquiry-form/enquiry-form.component';
 
 export const routes: Routes = [
   {
-    path: 'enquiryForm',
+    path: 'AMS/enquiryForm',
     component: EnquiryFormComponent,
   },
   {
     path: '',
-    component: EnquiryFormComponent,
+    redirectTo: 'AMS/enquiryForm',
+    pathMatch: 'full',
   },
   {
     path: '**',
-    component: EnquiryFormComponent,
+    redirectTo: 'AMS/enquiryForm',
+    pathMatch: 'full',
   },
 ];

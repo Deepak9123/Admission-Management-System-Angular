@@ -15,6 +15,7 @@ export class EnquiryFormComponent {
   enquiryForm: FormGroup;
   familyPhotoFile: File | null = null;
   passportPhotoFile: File | null = null;
+  submitted = false;
 
   constructor(
     private fb: FormBuilder,
@@ -30,7 +31,7 @@ export class EnquiryFormComponent {
       pwd: [''],
       appId: [''],
       udise: [''],
-      classOfStudent: [''],
+      classOfStudent: ['', Validators.required],
       fatherName: ['', Validators.required],
       fatherAdharCardNo: ['', Validators.required],
       fatherMobileNo: ['', Validators.required],
@@ -76,21 +77,27 @@ export class EnquiryFormComponent {
     this.snackBar.open(message, 'Close', config);
   }
 
+  get f() {
+    return this.enquiryForm.controls;
+  }
+
   onSubmit(): void {
-    // if (this.enquiryForm.invalid) {
-    //   this.showError('Please fill all  fields correctly.');
-    //   return;
-    // }
+    this.submitted = true;
 
-    // if (this.familyPhotoFile == null || this.familyPhotoFile == undefined) {
-    //   this.showError('Please upload family photo correctly.');
-    //   return;
-    // }
-    // if (this.passportPhotoFile == null || this.passportPhotoFile == undefined) {
-    //   this.showError('Please upload passwort photo correctly.');
-    //   return;
-    // }
+    if (this.enquiryForm.invalid) {
+      // this.showError('Please fill all required fields correctly.');
+      return;
+    }
 
+    if (!this.familyPhotoFile) {
+      this.showError('Please upload family photo correctly.');
+      return;
+    }
+
+    if (!this.passportPhotoFile) {
+      this.showError('Please upload passport photo correctly.');
+      return;
+    }
     const formData = new FormData();
 
     // Append form values
@@ -110,7 +117,7 @@ export class EnquiryFormComponent {
       next: (res: any) => {
         if (res.status == 201) {
           this.showScuess('Form submitted successfully!');
-          this.enquiryForm.reset();
+          // this.enquiryForm.reset();
         } else {
           this.showError(res?.message);
         }
